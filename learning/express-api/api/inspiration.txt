@@ -1,0 +1,2 @@
+This is inspired from
+http://blog.modulus.io/nodejs-and-express-create-rest-api
