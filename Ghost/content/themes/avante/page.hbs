@@ -1,0 +1,67 @@
+{{!< default}}
+
+{{> menu}}
+
+<div class="featured-image-wrap clearfix">
+	<button id="showLeft"><i class="icon-flickr"></i></button>
+	<div class="featured-image" data-height="420"></div>
+</div>
+
+<div id="main-wrapper">
+	<div class="container-wrap">
+
+	<div class="container">
+		<div class="row">
+			<main class="main-content col-sm-9" role="main">
+				
+			  <article class="{{post_class}}">
+			    {{#post}}		
+					<a id="intro" class="anchor">&nbsp;</a>
+			    <section class='post-content'>    
+				    <h1 class="title">{{{title}}}</h1>
+				    <div class='text'>{{content}}</div>
+					</section>
+			  
+					{{/post}}
+			  </article>
+			</main>
+
+			<aside id="sidebar" class="col-sm-3" role="complementary">
+				<div class="side-content">
+					<section class="author widget">
+						{{#post}}
+							{{#if author}}			          
+		          	<img src="{{author.image}}" alt="">
+		            <h4>{{author.name}}</h4>
+		            <p>{{author.bio}}</p>			          
+			        {{/if}}
+			      {{/post}}
+
+						<div class="share">
+		        	{{> share}}
+		        </div>
+					</section><!-- author -->
+					
+					{{! Mailchimp form}}
+					<section class="mailchimp widget">
+						<h4 class="widget-title">Subscribe</h4>
+						<p>Get daily updates on my blog. Enter your email below to subscribe.</p>
+						<form id="mc-form" action="http://cheriomedia.us3.list-manage.com/subscribe/post?u=d7d59c41d0b3e281d2a9ebdf0&id=0fd01d17b4" method="post" novalidate="true">
+							<div class="input-group">
+								<input id="mc-email" type="email" name="EMAIL" placeholder="Email address" class="form-control" required="">
+						      	<span class="input-group-btn">
+						        	<button class="btn" type="submit"><i class="icon-arrow-right2"></i></button>
+						      	</span>
+						    </div>
+						</form>
+					</section>
+
+					{{! Place your ads or badges here }}
+					<section class="ads widget">
+						
+					</section>
+		    </div><!-- side content -->
+			</aside><!-- #sidebar -->
+
+		</div>
+	</div>
