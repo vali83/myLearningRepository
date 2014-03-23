@@ -31,12 +31,21 @@ config = {
                 filename: path.join(__dirname, '/content/data/ghost-dev.db')
             },
             debug: false
+//            client: 'postgres',
+//            connection: {
+//                host: 'database address',
+//                user: 'username',
+//                password: 'password',
+//                database: 'databasename',
+//                port: '5432'
         },
         server: {
             // Host to be passed to node's `net.Server#listen()`
-            host: '127.0.0.1',
+//            host: '127.0.0.1',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
             port: '2368'
+            host: '127.0.0.1',
+       //     port: process.env.PORT
         }
     },
 
@@ -44,20 +53,29 @@ config = {
     // When running Ghost in the wild, use the production environment
     // Configure your URL and mail settings here
     production: {
-        url: 'http://my-ghost-blog.com',
+        url: 'http://foodforfun.herokuapp.com',
         mail: {},
         database: {
-            client: 'sqlite3',
+//            client: 'sqlite3',
+//            connection: {
+//                filename: path.join(__dirname, '/content/data/ghost.db')
+//            },
+//            debug: false
+            client: 'postgres',
             connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
-            },
-            debug: false
+                host: 'ec2-174-129-218-200.compute-1.amazonaws.com',
+                user: 'ducjrwredoofyp',
+                password: 'JEX6Xi5EqvITCteajMqLVyNmDi',
+                database: 'dc4otvpvrng2al',
+                port: '5432'
         },
         server: {
             // Host to be passed to node's `net.Server#listen()`
-            host: '127.0.0.1',
+//            host: '127.0.0.1',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
-            port: '2368'
+//            port: '2368'
+            host: '0.0.0.0',
+            port: process.env.PORT
         }
     },
 
